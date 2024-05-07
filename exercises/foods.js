@@ -5,8 +5,8 @@ let lunch = [
 ];
 function total(item) {
   let subTotal = 0;
-  for (let index = 0; index < item.length; index += 1) {
-    subTotal += item[index].price;
+  for (let index = 0; index < lunch.length; index += 1) {
+    subTotal += lunch[index].price;
   }
   return subTotal;
 }
@@ -15,16 +15,19 @@ console.log("Total cost of lunch item " + totalLunchCost);
 
 let taxRate = 8 / 100;
 
-function totalWithTax(item, taxRate) {
-  let totalCost = totalLunchCost(item);
-
-  let taxAmount = subTotal * taxRate;
-  return subTotal + taxAmount;
+function totalWithTax() {
+  let taxAmount = totalLunchCost * taxRate;
+  return taxAmount;
 }
- let totalLunchCostWithTax = totalWithTax(item, taxRate);
-    console.log(totalLunchCostWithTax);
 
-   
-    
- 
-    
+console.log(totalWithTax());
+
+let tipRate = 18 / 100;
+function totalWithTips() {
+  let tipAmount = totalLunchCost * tipRate;
+  return tipAmount;
+}
+console.log(totalWithTips());
+
+let totalDue = totalLunchCost + totalWithTax() + totalWithTips();
+console.log(totalDue);
