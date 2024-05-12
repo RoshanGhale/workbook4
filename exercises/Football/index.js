@@ -28,7 +28,7 @@ function displayTeam() {
 
   if (selectedTeam) {
     const teamInfo = document.getElementById("teamInfo");
-    teamInfo.innerText = `Team: ${selectedTeam.name}, ${selectedTeam.code},  Location: ${selectedTeam.plays}`;
+    teamInfo.innerText = `You selected ${selectedTeam.name} (${selectedTeam.code}) who plays in ${selectedTeam.plays}`;
   } else {
     alert("Team not found");
   }
